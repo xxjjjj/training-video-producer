@@ -1,8 +1,8 @@
 ---
 name: training-video-producer
-description: 将培训资料、SOP、完整旁白、截图或已有动态 HTML 制作为真正有动作的动画培训视频，保留完整配音与字幕。单包包含 HyperFrames 接入、MiniMax 配音、字幕衔接、环境配置与旧版项目工具；也用于局部修复、迁移或分发技能。用于教学和操作培训。
+description: 将培训资料、SOP、完整旁白、截图或已有动态 HTML 制作为真正有动作的动画培训视频，保留完整配音与字幕。单包包含 HyperFrames 接入、MiniMax / Edge TTS 可选配音、字幕衔接、环境配置与旧版项目工具；也用于局部修复、迁移或分发技能。用于教学和操作培训。
 metadata:
-  version: "0.5.3"
+  version: "0.5.5"
   display_name: "培训视频制作 · 一体版"
   engine: "hyperframes@0.8.42"
 ---
@@ -21,6 +21,7 @@ metadata:
 - 每镜头记录输入、动作、输出和业务人工确认点；不适用写“不适用”。制作说明不上屏，示意操作不冒充实测录屏。
 - 全课生产前确认代表性样片；已有适用授权和确认可复用。调整画面不重复生成未变更的配音。
 - 密钥由使用者单独配置，不进技能、项目媒体、日志或分发包。配音是否可用不能从 WorkBuddy/Codex 的聊天模型或会员推断。
+- 新项目未指定声音时默认免费 Edge TTS 晓晓（`zh-CN-XiaoxiaoNeural`），无需再次询问免费还是付费。用户指定其他音色时按其选择；指定 MiniMax 标准音色或已有克隆音色时显式使用 `--provider minimax`。已有项目沿用已确认的服务与音色，优先复用原音频，不因默认值变化改配音。免费失败时停止报告，不自动转付费；存在 MiniMax 密钥不代表选择了付费配音。
 
 ## 单包执行路径
 
@@ -32,7 +33,7 @@ metadata:
 4. **字幕与动画**：读本包 [HyperFrames 制作指南](references/hyperframes.md)。按真实音频取得字幕时间、对照完整原稿纠错；用 `scripts/studio.mjs prepare` 整理音频、字幕片段及时间轴，再由代理按分镜编写 `index.html` 的实际动画。prepare 只整理素材，不会自动创作或宣称完成视频。
 5. **检查与交付**：通过本包 `studio.mjs cli` 调用固定版本的 lint、check、preview、render。确认代表性样片后分章节完成整课；核验真实音轨、字幕和动作，并保存可编辑工程及最终 MP4。具体命令见 HyperFrames 指南。检查按 workflow.md 的收口规则执行；通过后转入下一阶段，不为清零非阻断警告反复重写。
 
-配音供应商可以替换为用户已有的服务，但本包目前只有 MiniMax 的在线生成脚本；其他服务先取得真实音频再接入同一 audioPath，不宣称已经实现其他供应商 API。
+本包支持 MiniMax 与可选 Edge TTS，统一输出 audioPath。Edge TTS 是第三方工具接入的微软在线语音服务，需要网络与额外 Python 依赖，不需要 MiniMax 密钥；不承诺无限量、永久可用或声音克隆。其他供应商先取得真实音频再接入。
 
 ## 旧项目兼容
 

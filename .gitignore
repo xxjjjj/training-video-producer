@@ -8,3 +8,5 @@ production/
 private/
 *.key
 *.pem
+.edge-tts-venv/
+__pycache__/

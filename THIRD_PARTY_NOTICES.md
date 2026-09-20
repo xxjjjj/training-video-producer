@@ -36,3 +36,13 @@ original proprietary headers in exported HTML projects; do not describe it as
 Apache-2.0. New fonts, images, music, models and footage added by users require
 their own applicable rights. MiniMax is an external paid service, not a model
 or quota supplied under this project's license.
+
+## Optional free speech client
+
+Edge TTS is an optional separately installed Python CLI dependency, pinned to
+edge-tts 7.2.8: https://github.com/rany2/edge-tts / https://pypi.org/project/edge-tts/7.2.8/ .
+Upstream is LGPLv3 (srt_composer.py separately MIT); see its LICENSE.
+This ZIP contains only our subprocess integration, not the client or its dependencies.
+The client accesses Microsoft's online speech service; its software license does not
+grant a service SLA, unlimited usage or unrestricted commercial rights to the service.
+It is not an official Microsoft SDK or a bundled offline speech model.

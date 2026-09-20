@@ -82,8 +82,9 @@ export function doctor() {
     transcription: { ready: upstream?.checks?.some(c => c.name === 'whisper-cpp' && c.ok) === true,
       requiredWhen: 'Existing narration audio has no usable timed captions',
       next: 'See references/hyperframes.md; configure whisper.cpp or use existing timed captions.' },
-    voice: { provider: 'MiniMax', environmentCredentialPresent: Boolean(process.env.MINIMAX_API_KEY),
-      networkTested: false, note: 'Optional if using existing audio. --key-file is checked by tts.mjs doctor.' } };
+    voice: { provider: 'Edge TTS', voice: 'zh-CN-XiaoxiaoNeural', credentialRequired: false,
+      minimaxEnvironmentCredentialPresent: Boolean(process.env.MINIMAX_API_KEY),
+      networkTested: false, note: 'Default for new projects; preserve confirmed voices in existing projects. Check optional Python dependency with tts.mjs doctor. MiniMax requires --provider minimax.' } };
 }
 async function setup() {
   if (Number(process.versions.node.split('.')[0]) < 22) throw new Error('NEED_CONFIG: install Node.js 22+ first');

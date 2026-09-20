@@ -25,7 +25,7 @@ doctor 缺 Node、HyperFrames、FFmpeg/ffprobe 或 Chrome 时返回非零；检�
 
 ## 配音配置
 
-见 [tts.md](tts.md)。每个伙伴配置自己的 MINIMAX_API_KEY 或私密 key 文件。已有 MP3/WAV 可以直接接入，配音服务不是必装模型。
+见 [tts.md](tts.md)。用户可选择免费 Edge TTS（额外 Python 依赖、无需密钥），或配置自己的 MINIMAX_API_KEY / 私密 key 文件使用 MiniMax。已有 MP3/WAV 可以直接接入，配音服务不是必装模型。
 
 首次可对代理说：“配置这个培训视频技能，检查环境；只配置，不调用配音、不制作视频。”以后制作时直接给资料即可。Skill 文件只是完整制作能力的说明和工具包，Node、浏览器、程序依赖仍需首次下载；不声称 ZIP 是完全离线的可执行应用。
 
