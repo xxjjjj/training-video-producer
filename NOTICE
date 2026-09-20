@@ -1,0 +1,13 @@
+training-video-producer
+Copyright 2026 training-video-producer contributors.
+
+Original integration code and documentation are licensed under the Apache
+License, Version 2.0. Third-party components retain their own licenses.
+
+This project adapts selected HyperFrames composition guidance and an HTML
+scaffold from HeyGen's HyperFrames 0.8.42 (Apache-2.0). The adapted files are
+references/hyperframes.md and assets/composition-starter.html. These files
+have been changed for this training-video workflow.
+
+This is an independent project, not an official HeyGen, WorkBuddy, Codex,
+MiniMax, or Webflow product or endorsement. See THIRD_PARTY_NOTICES.md.

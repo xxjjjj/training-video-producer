@@ -1,0 +1,26 @@
+{
+  "title": "培训视频制作入门",
+  "scenes": [
+    {
+      "id": "demo-01", "chapter": "准备", "title": "准备培训资料",
+      "narration": "先准备培训资料，说明给谁看，以及看完后需要学会什么。",
+      "input": "培训资料", "action": "提取受众和学习目标", "output": "制作要求", "humanCheckpoint": "确认受众和目标",
+      "visualType": "extract",
+      "viewer": { "headline": "明确这堂课要教什么", "leftTitle": "输入资料", "rightTitle": "制作要求", "inputText": "一份培训资料，加上你的教学要求。", "items": ["给谁看", "需要学会什么", "有哪些操作步骤"], "result": "明确的学习目标", "checkpoint": "确认受众和目标" }
+    },
+    {
+      "id": "demo-02", "chapter": "制作", "title": "先做小样片",
+      "narration": "把内容整理成分镜，生成配音，再制作一小段视频检查效果。",
+      "input": "制作要求", "action": "分镜、配音与视频制作", "output": "样片", "humanCheckpoint": "确认声音与画面",
+      "visualType": "pipeline",
+      "viewer": { "headline": "从文稿到有声样片", "leftTitle": "制作顺序", "rightTitle": "样片交付", "inputText": "从已经确认的文稿开始。", "items": ["整理分镜", "生成配音", "制作样片"], "result": "可播放的视频", "checkpoint": "确认声音与画面" }
+    },
+    {
+      "id": "demo-03", "chapter": "检查", "title": "检查后再扩大制作",
+      "narration": "检查有没有读错、漏字或画面遮挡，确认后再制作完整课程。",
+      "input": "样片", "action": "检查并确认", "output": "修改清单或确认结果", "humanCheckpoint": "确认样片",
+      "visualType": "boundary",
+      "viewer": { "headline": "样片确认后再继续", "leftTitle": "检查范围", "rightTitle": "确认结果", "inputText": "边看画面，边听声音。", "items": ["避免读错或漏字", "避免字幕遮挡", "避免步骤讲不清"], "result": "记录修改或确认", "checkpoint": "确认样片" }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<!-- Authoring scaffold, not a finished scene. Adapted from HyperFrames 0.8.42;
+     see licenses/HyperFrames-Apache-2.0.txt in the skill distribution. -->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920, height=1080">
+  <title>培训动画工程</title>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <style>
+    html, body { margin: 0; width: 100%; height: 100%; background: #101923; color: #f7f8fa; font-family: sans-serif; }
+    #root { position: relative; width: 100%; height: 100%; overflow: hidden; }
+    .scene { position: absolute; inset: 0; }
+    .caption { position: absolute; left: 120px; right: 120px; bottom: 60px; z-index: 100; text-align: center; font-size: 40px; line-height: 1.5; }
+    .caption span { background: #101923; padding: 8px 18px; box-decoration-break: clone; }
+  </style>
+</head>
+<body>
+  <!-- Copy as index.html, set duration from timing.json, author content-specific
+       scenes, then insert media.html and captions.html under the root. Maker
+       notes remain comments and must never become visible teaching content. -->
+  <div id="root" data-composition-id="training" data-start="0" data-width="1920" data-height="1080" data-duration="1">
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // Author real subject motion on this timeline, at absolute composition time.
+    window.__timelines = window.__timelines || {};
+    window.__timelines.training = tl;
+  </script>
+</body>
+</html>
